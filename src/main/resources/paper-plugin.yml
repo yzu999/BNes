@@ -1,0 +1,4 @@
+name: BNes
+version: '1.0-SNAPSHOT'
+main: top.houzimc.bNes.BNes
+api-version: '1.21'
