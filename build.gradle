@@ -53,11 +53,20 @@ shadowJar {
 // 自动递增版本号的task
 tasks.register('incrementVersion') {
     doLast {
-        def versionParts = project.version.tokenize('.')
+        // 移除 -SNAPSHOT 后缀（如果存在）
+        def baseVersion = project.version.replace('-SNAPSHOT', '')
+        def versionParts = baseVersion.tokenize('.')
+
+        // 确保版本号有三部分（major.minor.patch）
+        if (versionParts.size() < 3) {
+            throw new GradleException("Version number must be in format major.minor.patch")
+        }
+
+        // 递增 patch 版本号
         def patch = versionParts[2].toInteger() + 1
         def newVersion = "${versionParts[0]}.${versionParts[1]}.${patch}"
 
-        // 更新build.gradle中的版本号
+        // 更新 build.gradle 中的版本号
         def buildFile = file('build.gradle')
         def buildText = buildFile.text
         buildText = buildText.replaceFirst("version '${project.version}'", "version '${newVersion}'")
