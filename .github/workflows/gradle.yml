@@ -18,6 +18,9 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
+      - name: Set gradlew executable
+        run: chmod +x gradlew
+
       - name: Increment version
         run: ./gradlew incrementVersion
 
