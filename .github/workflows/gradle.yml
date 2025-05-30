@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # 允许创建 Release 和上传资产
     steps:
       - uses: actions/checkout@v4
       - name: Set up JDK
