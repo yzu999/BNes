@@ -35,4 +35,4 @@
 * 命令注册更改为[CommandAPI](https://docs.commandapi.dev/intro)进行注册
 
 ## 引用
-* [HalfNes](ttps://github.com/andrew-hoffman/halfnes)
+* [HalfNes](https://github.com/andrew-hoffman/halfnes)
