@@ -8,7 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write  # 需要这个权限来创建Release
     steps:
       - uses: actions/checkout@v3
 
