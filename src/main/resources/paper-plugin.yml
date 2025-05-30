@@ -1,4 +1,16 @@
 name: BNes
 version: '1.0-SNAPSHOT'
 main: top.houzimc.bNes.BNes
-api-version: '1.21'
+api-version: '1.21.4'
+dependencies:
+  server:
+    voicechat:
+      required: false
+      load: BEFORE
+    Vault:
+      required: false
+      load: BEFORE
+    CommandAPI:
+      load: BEFORE
+      required: true
+      join-classpath: true

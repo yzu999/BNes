@@ -1,4 +1,4 @@
-package cn.whiteg.bnes.utils;
+package top.houzimc.bNes.utils;
 
 import it.unimi.dsi.fastutil.ints.Int2ByteOpenHashMap;
 import net.minecraft.world.level.saveddata.maps.MapItemSavedData;

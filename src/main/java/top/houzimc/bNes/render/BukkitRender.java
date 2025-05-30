@@ -1,13 +1,4 @@
-package cn.whiteg.bnes.render;
-
-import cn.whiteg.bnes.BNes;
-import cn.whiteg.bnes.buffmap.BuffMapConstructor;
-import cn.whiteg.bnes.buffmap.CAndSConstructor;
-import cn.whiteg.bnes.buffmap.NoneConstructor;
-import cn.whiteg.bnes.nms.PlayerNms;
-import cn.whiteg.bnes.utils.FpsMonitor;
-import cn.whiteg.bnes.utils.MapUtils;
-import cn.whiteg.bnes.voicechat.VoiceChatAudioOut;
+package top.houzimc.bNes.render;
 import com.grapeshot.halfnes.APU;
 import com.grapeshot.halfnes.NES;
 import com.grapeshot.halfnes.ui.GUIInterface;
@@ -15,7 +6,6 @@ import com.grapeshot.halfnes.video.NesColors;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import net.minecraft.network.protocol.Packet;
-import net.minecraft.network.protocol.game.ClientboundMapItemDataPacket;
 import net.minecraft.world.level.saveddata.maps.MapItemSavedData;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -26,6 +16,14 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.MapMeta;
 import org.bukkit.map.MapRenderer;
 import org.bukkit.map.MapView;
+import top.houzimc.bNes.BNes;
+import top.houzimc.bNes.buffmap.BuffMapConstructor;
+import top.houzimc.bNes.buffmap.CAndSConstructor;
+import top.houzimc.bNes.buffmap.NoneConstructor;
+import top.houzimc.bNes.nms.PlayerNms;
+import top.houzimc.bNes.utils.FpsMonitor;
+import top.houzimc.bNes.utils.MapUtils;
+import top.houzimc.bNes.voicechat.VoiceChatAudioOut;
 
 import java.io.File;
 import java.lang.ref.WeakReference;
@@ -271,7 +269,7 @@ public class BukkitRender implements GUIInterface {
                 if (audioOutInterface == null){
                     audioOutInterface = new VoiceChatAudioOut(this,plugin.getVoiceChatPlugin());
                 }
-                final APU apu = nes.getApu();
+                final APU apu = nes.getCPURAM().apu;
                 if (apu.getAi() != audioOutInterface){
                     apu.getAi().destroy();
                     apu.setAi(audioOutInterface);

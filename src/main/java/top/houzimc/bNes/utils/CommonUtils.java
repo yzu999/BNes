@@ -1,4 +1,4 @@
-package cn.whiteg.bnes.utils;
+package top.houzimc.bNes.utils;
 
 import java.text.DecimalFormat;
 import java.util.Random;

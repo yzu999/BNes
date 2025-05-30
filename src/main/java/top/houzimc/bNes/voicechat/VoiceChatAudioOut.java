@@ -1,6 +1,5 @@
-package cn.whiteg.bnes.voicechat;
+package top.houzimc.bNes.voicechat;
 
-import cn.whiteg.bnes.render.BukkitRender;
 import com.grapeshot.halfnes.audio.AudioOutInterface;
 import de.maxhenkel.voicechat.api.Position;
 import de.maxhenkel.voicechat.api.VoicechatServerApi;
@@ -10,6 +9,7 @@ import de.maxhenkel.voicechat.api.opus.OpusEncoderMode;
 import de.maxhenkel.voicechat.plugins.impl.opus.OpusManager;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
+import top.houzimc.bNes.render.BukkitRender;
 
 import java.util.UUID;
 

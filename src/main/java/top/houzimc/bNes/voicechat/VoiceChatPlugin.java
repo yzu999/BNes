@@ -1,6 +1,5 @@
-package cn.whiteg.bnes.voicechat;
+package top.houzimc.bNes.voicechat;
 
-import cn.whiteg.bnes.BNes;
 import com.grapeshot.halfnes.PrefsSingleton;
 import de.maxhenkel.voicechat.Voicechat;
 import de.maxhenkel.voicechat.api.VoicechatApi;
@@ -15,6 +14,7 @@ import de.maxhenkel.voicechat.plugins.impl.VoicechatServerApiImpl;
 import de.maxhenkel.voicechat.voice.server.Server;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import top.houzimc.bNes.BNes;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.UUID;

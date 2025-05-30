@@ -1,4 +1,4 @@
-package cn.whiteg.bnes.voicechat;
+package top.houzimc.bNes.voicechat;
 
 import de.maxhenkel.voicechat.Voicechat;
 import de.maxhenkel.voicechat.api.ServerPlayer;

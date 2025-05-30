@@ -1,4 +1,4 @@
-package cn.whiteg.bnes.render;
+package top.houzimc.bNes.render;
 
 import com.grapeshot.halfnes.ui.ControllerInterface;
 

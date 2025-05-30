@@ -1,13 +1,13 @@
-package cn.whiteg.bnes.nms;
+package top.houzimc.bNes.nms;
 
-import cn.whiteg.bnes.BNes;
-import cn.whiteg.bnes.utils.NMSUtils;
 import io.netty.channel.Channel;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.Packet;
 import org.bukkit.craftbukkit.entity.CraftPlayer;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
+import top.houzimc.bNes.BNes;
+import top.houzimc.bNes.utils.NMSUtils;
 
 import java.lang.reflect.Field;
 

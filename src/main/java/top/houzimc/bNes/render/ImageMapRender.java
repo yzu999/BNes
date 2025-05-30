@@ -1,17 +1,17 @@
-package cn.whiteg.bnes.render;
+package top.houzimc.bNes.render;
 
-import cn.whiteg.bnes.buffmap.BuffMapConstructor;
-import cn.whiteg.bnes.buffmap.ChunkConstructor;
-import cn.whiteg.bnes.buffmap.NoneConstructor;
-import cn.whiteg.bnes.nms.PlayerNms;
-import cn.whiteg.bnes.utils.CommonUtils;
-import cn.whiteg.bnes.voicechat.VoiceChatAudioOut;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.world.level.saveddata.maps.MapItemSavedData;
 import org.bukkit.entity.Player;
 import org.bukkit.map.MapCanvas;
 import org.bukkit.map.MapRenderer;
 import org.bukkit.map.MapView;
+import top.houzimc.bNes.buffmap.BuffMapConstructor;
+import top.houzimc.bNes.buffmap.ChunkConstructor;
+import top.houzimc.bNes.buffmap.NoneConstructor;
+import top.houzimc.bNes.nms.PlayerNms;
+import top.houzimc.bNes.utils.CommonUtils;
+import top.houzimc.bNes.voicechat.VoiceChatAudioOut;
 
 import java.util.List;
 import java.util.Map;

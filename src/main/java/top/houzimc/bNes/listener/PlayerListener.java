@@ -1,18 +1,17 @@
-package cn.whiteg.bnes.listener;
+package top.houzimc.bNes.listener;
 
-import cn.whiteg.bnes.BNes;
-import cn.whiteg.bnes.render.BukkitRender;
 import org.bukkit.entity.*;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.MapMeta;
 import org.bukkit.map.MapView;
+import top.houzimc.bNes.BNes;
+import top.houzimc.bNes.render.BukkitRender;
 
 public class PlayerListener implements Listener {
     private final BNes plugin;

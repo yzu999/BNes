@@ -1,4 +1,4 @@
-package cn.whiteg.bnes.utils;
+package top.houzimc.bNes.utils;
 
 public class FpsMonitor {
     long nextUpdateTime = System.currentTimeMillis();

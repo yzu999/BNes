@@ -1,4 +1,4 @@
-package cn.whiteg.bnes.utils;
+package top.houzimc.bNes.utils;
 
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -79,5 +79,12 @@ public class CardFactory {
         }
         return list;
     }
-
+    public List<String> getAllRomList(){
+        if (!dir.exists() || !dir.isDirectory()) return Collections.emptyList();
+        var files = dir.list();
+        if (files == null) return Collections.emptyList();
+        return Arrays.stream(files)
+                .filter(item -> item.endsWith(".nes") && !new File(dir,item).isDirectory())
+                .toList();
+    }
 }

@@ -1,4 +1,4 @@
-package cn.whiteg.bnes.utils;
+package top.houzimc.bNes.utils;
 
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;

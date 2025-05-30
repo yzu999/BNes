@@ -1,13 +1,13 @@
-package cn.whiteg.bnes.render;
+package top.houzimc.bNes.render;
 
-import cn.whiteg.bnes.BNes;
-import cn.whiteg.bnes.utils.MapUtils;
 import com.grapeshot.halfnes.video.NesColors;
+import top.houzimc.bNes.BNes;
+import top.houzimc.bNes.utils.MapUtils;
 
 public class BukkitRender1x extends BukkitRender {
 
     //单个地图的实例
-    public BukkitRender1x(String name,BNes plugin) {
+    public BukkitRender1x(String name, BNes plugin) {
         super(name,plugin);
         size = 1;
     }

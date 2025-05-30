@@ -1,9 +1,6 @@
-package cn.whiteg.bnes.render;
+package top.houzimc.bNes.render;
 
-import cn.whiteg.bnes.BNes;
-import cn.whiteg.bnes.Setting;
 import org.bukkit.Bukkit;
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.ItemFrame;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -16,6 +13,8 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerSwapHandItemsEvent;
+import top.houzimc.bNes.BNes;
+import top.houzimc.bNes.Setting;
 
 import java.util.Arrays;
 import java.util.List;
@@ -86,11 +85,17 @@ public class PlayerInput implements Listener {
 
                 //方向
                 float ws = plugin.getPlayerNms().getInputZ(player);
-                if (ws < -0.4) controller.pressButton(PlayerController.Button.DOWN);
                 float ad = plugin.getPlayerNms().getInputX(player);
-                if (ad > 0.4) controller.pressButton(PlayerController.Button.LEFT);
-                if (ad < -0.4) controller.pressButton(PlayerController.Button.RIGHT);
-                if (ws > 0.4) controller.pressButton(PlayerController.Button.UP);
+                float yaw = player.getLocation().getYaw(); // 获取玩家朝向角度（0°=南，90°=西，180°=北，270°=东）
+                double angle = Math.toRadians(yaw);
+                // 将输入向量转换为世界坐标系
+                // 根据调整后的输入模拟按键
+                float forward = (float) (ws * Math.cos(angle) - ad * Math.sin(angle));
+                float strafe = (float) (ws * Math.sin(angle) + ad * Math.cos(angle));
+                if (forward < -0.4) controller.pressButton(PlayerController.Button.DOWN);
+                if (strafe > 0.4) controller.pressButton(PlayerController.Button.LEFT);
+                if (strafe < -0.4) controller.pressButton(PlayerController.Button.RIGHT);
+                if (forward > 0.4) controller.pressButton(PlayerController.Button.UP);
                 if (plugin.setting.DEBUG) player.sendActionBar("ws=" + ws + " ad=" + ad);
             }
         }
@@ -201,7 +206,7 @@ public class PlayerInput implements Listener {
     }
 
     @EventHandler(ignoreCancelled = true, priority = EventPriority.LOW)
-    public void onDroup(PlayerDropItemEvent event) {
+    public void onDrop(PlayerDropItemEvent event) {
         if (plugin.setting.onDrop == null) return;
         for (int i = 0; i < players.length; i++) {
             if (event.getPlayer() == players[i]){

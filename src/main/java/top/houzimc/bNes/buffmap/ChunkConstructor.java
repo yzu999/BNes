@@ -1,4 +1,4 @@
-package cn.whiteg.bnes.buffmap;
+package top.houzimc.bNes.buffmap;
 
 import net.minecraft.world.level.saveddata.maps.MapItemSavedData;
 
@@ -13,7 +13,6 @@ public class ChunkConstructor implements BuffMapConstructor {
     /**
      * 区块缓存图片地图更新器
      *
-     * @param image 图片输入
      * @param size  尺寸
      */
     public ChunkConstructor(int size) {

@@ -1,4 +1,4 @@
-package cn.whiteg.bnes.nms;
+package top.houzimc.bNes.nms;
 
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientboundMapItemDataPacket;

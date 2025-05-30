@@ -1,4 +1,4 @@
-package cn.whiteg.bnes.buffmap;
+package top.houzimc.bNes.buffmap;
 
 import net.minecraft.world.level.saveddata.maps.MapItemSavedData;
 
