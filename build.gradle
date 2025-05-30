@@ -2,6 +2,8 @@ plugins {
     id 'java'
     id("xyz.jpenilla.run-paper") version "2.3.1"
     id("io.papermc.paperweight.userdev") version "2.0.0-beta.17"
+    id 'com.github.johnrengelman.shadow' version '8.1.1' // 用于构建fat jar
+    id 'net.kyori.blossom' version '1.3.1'
 }
 
 group = 'top.houzimc'
@@ -37,6 +39,32 @@ dependencies {
     paperweight.paperDevBundle("1.21.4-R0.1-SNAPSHOT")
     implementation ('net.java.jinput:jinput:2.0.9')
     compileOnly("dev.jorel:commandapi-bukkit-core:10.0.0")
+}
+
+blossom {
+    replaceTokenIn('src/main/resources/paper-plugin.yml')
+    replaceToken '@version@', version
+}
+
+shadowJar {
+    archiveFileName = "${project.name}-${project.version}.jar"
+}
+
+// 自动递增版本号的task
+tasks.register('incrementVersion') {
+    doLast {
+        def versionParts = project.version.tokenize('.')
+        def patch = versionParts[2].toInteger() + 1
+        def newVersion = "${versionParts[0]}.${versionParts[1]}.${patch}"
+
+        // 更新build.gradle中的版本号
+        def buildFile = file('build.gradle')
+        def buildText = buildFile.text
+        buildText = buildText.replaceFirst("version '${project.version}'", "version '${newVersion}'")
+        buildFile.text = buildText
+
+        println "Incremented version from ${project.version} to ${newVersion}"
+    }
 }
 
 tasks {

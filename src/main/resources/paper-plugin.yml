@@ -1,5 +1,5 @@
 name: BNes
-version: '1.0.1-SNAPSHOT'
+version: @version@
 main: top.houzimc.bNes.BNes
 api-version: '1.21.4'
 dependencies:
